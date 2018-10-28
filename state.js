@@ -1,5 +1,5 @@
 exports.users = [
-    {
+{
         "_id": 1,
         "name": "Dale Cooper",
         "occupation": "FBI Agent",
