@@ -13,7 +13,13 @@ app.use(express.static('public'));
 
 
 //part 2
+app.get('/users', function(req,res,next){
+    res.json(users);
+});
 
+app.get('/users/1', function(req,res,next) {
+    res.json(users[0]);
+})
 
 app.post("/users",function(req,res,next)
 {
@@ -54,13 +60,10 @@ app.delete('/users/:userId', function(req,res,next){
     res.send("deleted");
 });
 
-
 //this takes care of any outlier cases
 app.use(function(req,res,) {
     res.send('not found');
-})
-
-
+});
 
 
 app.listen(3002, (err) => { //3002 is the port number, err is callback to check for err
